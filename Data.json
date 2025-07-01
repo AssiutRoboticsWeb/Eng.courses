@@ -1,0 +1,48 @@
+{
+    "general" : {},
+    "department" : {
+        "Electrical" : {
+            "general" : {},
+            "departments" : {
+                "Power Engineering" : {
+                    "second" :{},
+                    "third" :{},
+                    "fourth" :{}
+                },
+                "Computer Engineering" : {
+                    "second" :{},
+                    "third" :{},
+                    "fourth" :{}
+                },
+                "Communication Engineering" : {
+                    "second" :{},
+                    "third" :{},
+                    "fourth" :{}
+                }
+            }
+        },
+        "Mechanical" : {
+            "general" : {},
+            "departments" : {
+                "Power Engineering" : {
+                    "second" :{},
+                    "third" :{},
+                    "fourth" :{}
+                },
+                "Production Engineering" : {
+                    "second" :{},
+                    "third" :{},
+                    "fourth" :{}
+                },
+                "Mechatorincs Engineering" : {
+                    "second" :{},
+                    "third" :{},
+                    "fourth" :{}
+                }
+            }
+        },
+        "Civil" : {},
+        "archticture" : {},
+        "mining" : {}
+    }
+}
