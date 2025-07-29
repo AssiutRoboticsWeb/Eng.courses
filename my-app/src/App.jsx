@@ -1,5 +1,7 @@
 import  { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import DepartmentSelection from "./components/courses/departmentSelection.jsx";
+import CoursesView from "./components/courses/coursesView/coursesView.jsx"
 /* import Bootstrap */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -35,7 +37,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={ <h1>Home Page</h1>} />
-        <Route path="/courses" element={<h1 className="bg-danger">Courses Page</h1>} />
+        <Route path="/courses" element={<DepartmentSelection />} />
+        <Route path="/courses/department/:Id" element={<CoursesView />} />
         <Route path="/courses/course" element={<CourseInfo data={fetchedData} />} />
         <Route path="/course/course/lesson" element={<h1 className="bg-danger">lesson</h1>} />
         <Route path="*" element={ <h1>page Not created</h1>} />
