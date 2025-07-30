@@ -9,7 +9,7 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000; 
-
+  
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,11 +32,11 @@ app.use((req, res, next) => {
 
 const authRoutes = require("./routes/auth");
 const trackRoutes = require("./routes/track");
-
-
+ 
+  
 app.use('/', express.static(path.join(__dirname, 'public')));
 
-
+  
 app.use("/api/auth", authRoutes); 
 app.use("/api/track", trackRoutes);
 
