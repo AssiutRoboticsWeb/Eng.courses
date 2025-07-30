@@ -9,6 +9,7 @@ import "./App.css";
 /* import components */
 import CourseInfo from "./components/CourseInfo/CourseInfo.jsx";
 import Header from "./components/Header/Header.jsx";
+import Home from "./components/Home/home.jsx";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -36,7 +37,7 @@ function App() {
       {/* <CourseInfo data={fetchedData} /> */}
 
       <Routes>
-        <Route path="/" element={ <h1>Home Page</h1>} />
+        <Route path="/" element={ <Home />} />
         <Route path="/courses" element={<DepartmentSelection />} />
         <Route path="/courses/department/:Id" element={<CoursesView />} />
         <Route path="/courses/course" element={<CourseInfo data={fetchedData} />} />
@@ -44,7 +45,7 @@ function App() {
         <Route path="*" element={ <h1>page Not created</h1>} />
       </Routes>
       
-    </>
+    </> 
   );
 }
 
