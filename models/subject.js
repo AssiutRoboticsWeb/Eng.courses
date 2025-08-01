@@ -16,7 +16,7 @@ const CourseSchema=monggose.Schema({
     },
     description:{
         type:String,
-        required:[true,"Description is required"]
+        // required:[true,"Description is required"]
     },
     courses:[{
         type:monggose.Schema.Types.ObjectId,

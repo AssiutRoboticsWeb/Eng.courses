@@ -1,6 +1,9 @@
 const asyncHandler=require('../utils/asyncHandler')
 const appError=require("../utils/AppError")
-const Track=require('../models/track')
+const Track=require('../models/track').Track
+const YearSchema=require('../models/track').YearSchema
+const monggose=require('mongoose')
+
 
 const getAllTracks=asyncHandler(async(req,res)=>{   
     const tracks=await Track.find()
@@ -32,9 +35,32 @@ const addTrack= asyncHandler(async(req,res)=>{
     if(!type){
         throw appError("type is required",400)
     }
+    // add 5 years by default
+    const years=[]
+    for(let i=0;i<5;i++){
+        const year=new YearSchema({
+            name:`Year ${i+1}`,
+            firstSemester:{
+                courses:[{
+                    type:monggose.Schema.Types.ObjectId,
+                    ref:"Course"
+                }]  
+            },
+            secondSemester:{
+                courses:[{
+                    type:monggose.Schema.Types.ObjectId,
+                    ref:"Course"
+                }]
+            },
+        })
+        years.push(year)
+    }
+
     const newTrack= new Track({
         name,
-        type
+        type,
+        years,
+        
     })
 
     newTrack.save()

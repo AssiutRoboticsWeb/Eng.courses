@@ -18,10 +18,10 @@ const CourseSchema=monggose.Schema({
         type:String,
         required:[true,"Description is required"]
     },
-    subjects:[{
+    subject:{
         type:monggose.Schema.Types.ObjectId,
         ref:"Subject"
-    }],
+    },
     instructor:{
         type:String
     },
