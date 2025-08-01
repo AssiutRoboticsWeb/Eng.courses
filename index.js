@@ -32,14 +32,14 @@ app.use((req, res, next) => {
 
 const authRoutes = require("./routes/auth");
 const trackRoutes = require("./routes/track");
-<<<<<<< HEAD
+// <<<<<<< HEAD
 const yearRoutes = require("./routes/year");
 
 
-=======
+// =======
  
   
->>>>>>> dae3b4a8301eb1257b699e0c1ec6f046adc1f287
+// >>>>>>> dae3b4a8301eb1257b699e0c1ec6f046adc1f287
 app.use('/', express.static(path.join(__dirname, 'public')));
 
   
