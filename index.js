@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 // Routes
  
-
+ 
 const authRoutes = require("./routes/auth");
 const trackRoutes = require("./routes/track");
 // <<<<<<< HEAD
