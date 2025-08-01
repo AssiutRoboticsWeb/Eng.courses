@@ -54,6 +54,8 @@ const addTrack= asyncHandler(async(req,res)=>{
             },
         })
         years.push(year)
+        console.log(`added year${i+1}`);
+        
     }
 
     const newTrack= new Track({
