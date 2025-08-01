@@ -6,7 +6,7 @@ const monggose=require('mongoose')
 
 
 const getAllTracks=asyncHandler(async(req,res)=>{   
-    const tracks=await Track.find()
+    const tracks=await Track.find({})
     res.status(200).json({
         status:true,
         message:"Tracks fetched successfully",
@@ -36,7 +36,7 @@ const addTrack= asyncHandler(async(req,res)=>{
         throw appError("type is required",400)
     }
     // add 5 years by default
-    const years=[]
+    let years=[]
     for(let i=0;i<5;i++){
         const year=new YearSchema({
             name:`Year ${i+1}`,
