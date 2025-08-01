@@ -4,7 +4,7 @@ const YearController = require('../controller/year.controller')
 const checkRole = require('../middlewares/checkRole')
 
 // Apply role-based middleware
-router.use(checkRole("manager", "admin"))
+// router.use(checkRole("manager", "admin"))
 
 
 

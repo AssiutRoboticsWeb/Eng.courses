@@ -35,10 +35,10 @@ const addSubjectToFirstSemester = asyncHandler(async (req, res) => {
 // Add subject to second semester
 const addSubjectToSecondSemester = asyncHandler(async (req, res) => {
     const yearId = req.params.id
-    const { courseId } = req.body
+    const { subjectId } = req.body
 
-    if (!courseId) {
-        throw appError("Course ID is required", 400)
+    if (!subjectId) {
+        throw appError("Subject ID is required", 400)
     }
 
     const year = await YearSchema.findById(yearId)
@@ -46,14 +46,14 @@ const addSubjectToSecondSemester = asyncHandler(async (req, res) => {
         throw appError("Year not found", 404)
     }
 
-    year.secondSemester.subjects.push(courseId)
+    year.secondSemester.subjects.push(subjectId)
     await year.save()
 
     const updatedYear = await YearSchema.findById(yearId).populate('firstSemester.subjects').populate('secondSemester.subjects')
 
     res.status(200).json({
         status: true,
-        message: "Course added to second semester successfully",
+        message: "Subject added to second semester successfully",
         data: updatedYear
     })
 })
@@ -61,10 +61,10 @@ const addSubjectToSecondSemester = asyncHandler(async (req, res) => {
 // Remove subject from first semester
 const removeSubjectFromFirstSemester = asyncHandler(async (req, res) => {
     const yearId = req.params.id
-    const { courseId } = req.body
+    const { subjectId } = req.body
 
-    if (!courseId) {
-        throw appError("Course ID is required", 400)
+    if (!subjectId) {
+        throw appError("Subject ID is required", 400)
     }
 
     const year = await YearSchema.findById(yearId)
@@ -73,7 +73,7 @@ const removeSubjectFromFirstSemester = asyncHandler(async (req, res) => {
     }
 
     year.firstSemester.subjects = year.firstSemester.subjects.filter(
-        subject => subject.toString() !== courseId
+        subject => subject.toString() !== subjectId
     )
     await year.save()
 
@@ -89,10 +89,10 @@ const removeSubjectFromFirstSemester = asyncHandler(async (req, res) => {
 // Remove subject from second semester
 const removeSubjectFromSecondSemester = asyncHandler(async (req, res) => {
     const yearId = req.params.id
-    const { courseId } = req.body
+    const { subjectId } = req.body
 
-    if (!courseId) {
-        throw appError("Course ID is required", 400)
+    if (!subjectId) {
+        throw appError("Subject ID is required", 400)
     }
 
     const year = await YearSchema.findById(yearId)
@@ -101,7 +101,7 @@ const removeSubjectFromSecondSemester = asyncHandler(async (req, res) => {
     }
 
     year.secondSemester.subjects = year.secondSemester.subjects.filter(
-        subject => subject.toString() !== courseId
+        subject => subject.toString() !== subjectId
     )
     await year.save()
 
