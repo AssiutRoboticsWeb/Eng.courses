@@ -18,7 +18,11 @@ router.route('/:id')
 // Course management routes
 router.post('/:id/first-semester/courses', YearController.addCourseToFirstSemester)
 router.post('/:id/second-semester/courses', YearController.addCourseToSecondSemester)
-router.delete('/:id/first-semester/courses', YearController.removeCourseFromFirstSemester)
-router.delete('/:id/second-semester/courses', YearController.removeCourseFromSecondSemester)
+
+// router.put('/:id/first-semester/courses/:courseId', YearController.updateCourseInFirstSemester)
+// router.put('/:id/second-semester/courses/:courseId', YearController.updateCourseInSecondSemester)
+
+router.delete('/:id/first-semester/courses/:courseId', YearController.removeCourseFromFirstSemester)
+router.delete('/:id/second-semester/courses/:courseId', YearController.removeCourseFromSecondSemester)
 
 module.exports = router
