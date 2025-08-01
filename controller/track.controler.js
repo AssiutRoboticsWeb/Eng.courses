@@ -41,15 +41,15 @@ const addTrack= asyncHandler(async(req,res)=>{
         const year=new YearSchema({
             name:`Year ${i+1}`,
             firstSemester:{
-                courses:[{
+                subjects:[{
                     type:monggose.Schema.Types.ObjectId,
-                    ref:"Course"
+                    ref:"Subject"
                 }]  
-            },
+            },  
             secondSemester:{
-                courses:[{
+                subjects:[{
                     type:monggose.Schema.Types.ObjectId,
-                    ref:"Course"
+                    ref:"Subject"
                 }]
             },
         })
