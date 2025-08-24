@@ -20,7 +20,7 @@ export default function DepartmentSelection(){
             id: 4,
             name: "Archtict"
         }
-    ]
+    ] // fetch it 
     var mapped = departments.map((department) => {
                  return(<Link  to ={`/courses/department/:${department.id}`}  key={department.id}><div>{department.name}</div> </Link>
         )
