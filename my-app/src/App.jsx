@@ -1,51 +1,72 @@
-import  { useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import DepartmentSelection from "./components/courses/departmentSelection.jsx";
-import CoursesView from "./components/courses/coursesView/coursesView.jsx"
-/* import Bootstrap */
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import CoursesView from "./components/courses/coursesView/coursesView.jsx";
+
 import "./App.css";
+/* import pages */
+import CourseInfo from "./pages/OldCourseInfo/CourseInfo.jsx";
+import Home from "./pages/homePage/Home.jsx";
 /* import components */
-import CourseInfo from "./components/CourseInfo/CourseInfo.jsx";
-import Header from "./components/Header/Header.jsx";
-import Home from "./components/Home/home.jsx";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
-  const [fetchedData, setFetchedData] = useState(null);
-
-  const fetchDataFunc = async () => {
+  // /* -------------------------------------------------------------------------- */
+  /* -------------------------------------------------------------------------- */
+  // const fetchDataFunc2 = async (url) => {
+  //   try {
+  //     const res = await PostData(url); // or API URL
+  //     console.log("Fetched Data:", res);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+  // fetchDataFunc2("https://eng-courses-server.vercel.app/api/track");
+  /* -------------------------------------------------------------------------- */
+  /* -------------------------------------------------------------------------- */
+  const PostDataFunc = async (url) => {
     try {
-      const response = await fetch("/data/courses.json"); // or API URL
-      const data = await response.json();
-      setFetchedData(
-        data.department.electrical.departments.powerEngineering.second
-          .courses[0]
-      );
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "general\n",
+          name: "",
+        }),
+      });
+      const data = await res.json();
+      console.log("Fetched Data:", data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  useEffect(() => {
-    fetchDataFunc();
-  }, []);
+  if (false) {
+    PostDataFunc("https://eng-courses-server.vercel.app/api/track")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* -------------------------------------------------------------------------- */
 
   return (
     <>
       <Header />
-      {/* <CourseInfo data={fetchedData} /> */}
-
-      <Routes>
-        <Route path="/" element={ <Home />} />
-        <Route path="/courses" element={<DepartmentSelection />} />
-        <Route path="/courses/department/:Id" element={<CoursesView />} />
-        <Route path="/courses/course" element={<CourseInfo data={fetchedData} />} />
-        <Route path="/course/course/lesson" element={<h1 className="bg-danger">lesson</h1>} />
-        <Route path="*" element={ <h1>page Not created</h1>} />
-      </Routes>
-      
-    </> 
+      <div
+        className="core-section"
+        style={{ minHeight: "83vh", marginTop: "65px" }}>
+        {/* <Home /> */}
+        <Outlet />
+      </div>
+      <Footer />
+    </>
   );
 }
 
