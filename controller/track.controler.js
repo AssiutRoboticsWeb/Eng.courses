@@ -105,7 +105,8 @@ const deleteTrack=asyncHandler(async (req,res)=>{
         throw appError("Track not found",404)
     }
     // delete track
-    await track.remove()
+    // await track.remove()
+    await track.deleteOne();
     res.status(200).json({
         status:true,
         message:"Track deleted successfully",
