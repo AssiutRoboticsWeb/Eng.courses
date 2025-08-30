@@ -7,13 +7,14 @@ const DepartmentCard = ({ departmentDetails }) => {
     return <p>Loading...</p>;
   }
   return (
-    <li className="department">
+    <li className="department ">
       <Link
-        to={`/${departmentDetails.name?.trim()}`}
+        // to={`/${departmentDetails.name?.trim()}`}
+        to={`/department/${departmentDetails.name?.trim()}`}
         className="flex flex-col items-center justify-center gap-5 p-5
-            bg-white rounded-lg hover:scale-105 transition-all
-             hover:shadow-lg hover:shadow-gray-400 hover:scale-105 transition-all group
-            ">
+        bg-white rounded-lg hover:scale-105 transition-all
+        hover:shadow-lg hover:shadow-gray-400 hover:scale-105 transition-all group relative
+        ">
         <div className="department-icon bg-gray-200 rounded-full p-1 group-hover:bg-gray-300">
           {<MdElectricBolt size={50} className="text-blue-500" />}
         </div>
@@ -23,8 +24,11 @@ const DepartmentCard = ({ departmentDetails }) => {
         <div
           className="department-courses-number 
               text-gray-600  md:text-lg lg:text-2xl
-            ">
+              ">
           <span>48</span> Courses
+          <span className="absolute top-2 right-2 text-sm text-sky-500 bg-red-50 rounded-full px-2
+          group-hover:text-sky-600
+          ">{departmentDetails.type}</span>
         </div>
       </Link>
     </li>

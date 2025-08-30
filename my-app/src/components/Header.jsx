@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState , useRef } from "react";
 import { Link } from "react-router";
 // import icon
-
 import { CgProfile } from "react-icons/cg";
 import { CiMenuBurger } from "react-icons/ci";
 
@@ -59,17 +58,18 @@ const Header = () => {
   const [isHeaderMenuOpen, setIsHeaderMenuOpen] = useState(false);
 
   return (
-    <header className="conatiner fixed top-0 w-full z-50 px-4 py-2 bg-white shadow-lg h-16 capitalize flex items-center font-bold justify-between bg-sky-600 ">
+    <header className="conatiner fixed z-50 top-0 w-full  px-4 py-2 bg-white shadow-lg h-16 capitalize flex items-center font-bold justify-between bg-sky-600 ">
       {/* ---------------------------------- logo ----------------------------------  */}
       <figure className="logo w-1/2 md:w-1/4">
         <h2 className="text-2xl font-bold ">eng-learning</h2>
       </figure>
       {/* ---------------------------------- menu ---------------------------------- */}
-      <ul className="menu flex hidden justify-between md:flex  md:w-1/2 lg:text-xl    ">
+      <ul className="menu flex hidden justify-evenly md:flex  md:w-1/2  lg:text-xl    ">
         <li>
           <Link to="/">home</Link>
         </li>
-        <li>
+        {/* <li>
+          <Link to="/Not-Done-yet">Departments</Link>
           <select
             name=""
             id=""
@@ -89,7 +89,7 @@ const Header = () => {
               <option value="archtict">archtict</option>
             </optgroup>
           </select>
-        </li>
+        </li> */}
         <li className="whitespace-nowrap">
           <Link to="/">my courses</Link>
         </li>
@@ -102,12 +102,12 @@ const Header = () => {
         <button
           id="login"
           className="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <Link to="/">login</Link>
+          <Link to="https://eng-courses-server.vercel.app">login</Link>
         </button>
         <button
           id="singup"
           className="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <Link to="/">singup</Link>
+          <Link to="https://eng-courses-server.vercel.app">singup</Link>
         </button>
       </div>
       {/* ---------------------------------- profile --------------------------- */}

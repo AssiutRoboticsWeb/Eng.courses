@@ -45,8 +45,6 @@ export default function CoursesView(){
         }
     }
 
-
-
     const [state, editState] = useState({"year": 2, "term" : 2});
     
     const bodyData = departmentData.years[state.year];
@@ -57,7 +55,8 @@ export default function CoursesView(){
         <departmentContext.Provider  value={{term : state.term , content: bodyData}}>
             <Years stateIndicator = {state}  stateEditor={editState} />
             <Term  stateIndicator = {state}  stateEditor={editState} />
-            <Body data= {bodyData} term = {state.term} /> {/* there will be a state changes from years and send data to body depending on it */}
+            <Body data= {bodyData} term = {state.term} /> 
+            {/* there will be a state changes from years and send data to body depending on it */}
         </departmentContext.Provider>
             
         </>

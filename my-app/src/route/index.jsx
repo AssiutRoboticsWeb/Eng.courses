@@ -3,10 +3,10 @@ import App from "../App";
 
 import Home from "../pages/homePage/Home.jsx";
 import About from "../pages/aboutPage/About.jsx";
-import Header from "../components/Header.jsx";
+import Department from "../pages/departmentPage/Department.jsx";
 const router = createBrowserRouter([
   {
-     path: "/",
+    path: "/",
     element: <App />, // layout component
     children: [
       {
@@ -16,6 +16,11 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/department/:deprtName",
+        // path: "/department",
+        element: <Department />,
       },
     ],
   },

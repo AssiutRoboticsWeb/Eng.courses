@@ -8,12 +8,14 @@ import HeroSection from "./HeroSection.jsx";
 import DepartmentSelection from "./DepartmentsSection.jsx";
 import LastestCoursesSection from "./LastestCoursesSection.jsx";
 const Home = () => {
-  const { fetchedData, isLoading, fetchError } = useFetchData(
-    "https://eng-courses-server.vercel.app/api/track"
-  );
-    if (isLoading) return <p>Loading11...</p>;
-  if (fetchError) return <p>Error11: {fetchError}</p>;
+  // const { fetchedData, isLoading, fetchError } = useFetchData(
+  //   "https://eng-courses-server.vercel.app/api/track"
+  // );
+    // if (isLoading) return <p>Loading11...</p>;
+  // if (fetchError) return <p>Error11: {fetchError}</p>;
 
+  let isLoading = false;
+  let fetchedData = false;
 
   const SectionTitle = [
     {
@@ -30,13 +32,21 @@ const Home = () => {
   return (
     <>
       <HeroSection />
+
+    {isLoading ? (
+      <p>Loading11...</p>
+    ) : (
       <DepartmentSelection
         sectionTitleContent={SectionTitle[0]}
         fetchedDepartmentsData={fetchedData}
       />
+    )}
       <LastestCoursesSection sectionTitleContent={SectionTitle[1]} />
     </>
   );
 };
+
+
+
 
 export default Home;

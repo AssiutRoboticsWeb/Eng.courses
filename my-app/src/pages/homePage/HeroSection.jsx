@@ -6,7 +6,7 @@ const HeroSection = () => {
       className="home-Section m-auto mb-5 bg-red-400  
     bg-home-banner bg-cover bg-center bg-center h-screen my-16 relative flex justify-center items-center">
       <div className="over-lay absolute top-0 left-0 w-full h-full bg-black bg-opacity-75"></div>
-      <div className="content text-white z-50 md:w-2/3   p-5  flex flex-col gap-10">
+      <div className="content text-white z-40 md:w-2/3   p-5  flex flex-col gap-10">
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center font-black ">
           Engineering Course  <br /> Platform
         </h1>
