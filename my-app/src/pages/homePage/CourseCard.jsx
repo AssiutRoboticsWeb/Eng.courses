@@ -4,6 +4,9 @@ import useApi from "../../fetchApis/useApi.jsx";
 import toast, { Toaster } from "react-hot-toast";
 
 const CourseCard = ({ CourseDetails }) => {
+  // console.log("CourseDetails =>", CourseDetails);
+  // console.log("CourseDetails =>", CourseDetails.courses);
+
   const { data, isLoading, error, getData, postData, deleteData } = useApi(
     "http://localhost:5000/enrolledCourses"
   );
@@ -18,7 +21,7 @@ const CourseCard = ({ CourseDetails }) => {
     setIsEnrolled((prev) => !prev);
     notify();
   };
-
+// let isEnrolled = true;
   return (
     <section className="card bg-white rounded-lg pb-5 hover:shadow-lg hover:shadow-gray-400 hover:scale-105  transition-all">
       <div className="card-top ">

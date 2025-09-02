@@ -91,7 +91,7 @@ const Header = () => {
           </select>
         </li> */}
         <li className="whitespace-nowrap">
-          <Link to="/">my courses</Link>
+          <Link to="/myCourses">my courses</Link>
         </li>
         <li>
           <Link to="/about">about</Link>

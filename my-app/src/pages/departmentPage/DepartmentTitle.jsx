@@ -1,5 +1,5 @@
 import React from "react";
-const DepartmentTitle = ({DepartmentTitle}) => {
+const DepartmentTitle = ({ DepartmentTitle }) => {
   return (
     <article className="department-description flex flex-col justify-center items-center gap-5 mb-5 capitalize">
       <h2 className="text-2xl font-bold">{DepartmentTitle.departmentName}</h2>
@@ -11,7 +11,7 @@ const DepartmentTitle = ({DepartmentTitle}) => {
           Semester <span>{DepartmentTitle.semester}</span>
         </h5>
       </div>
-      <p>Include Courses </p>
+      <p>Include subjects </p>
     </article>
   );
 };

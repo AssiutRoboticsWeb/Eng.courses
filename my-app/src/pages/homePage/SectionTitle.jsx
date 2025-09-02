@@ -1,6 +1,7 @@
 import React from "react";
 
-const sectionTitle = ({ sectionTitleContent }) => {
+const SectionTitle = ({ sectionTitleContent }) => {
+
   if (!sectionTitleContent) {
     return <p>Loading...</p>;
   }
@@ -19,4 +20,4 @@ const sectionTitle = ({ sectionTitleContent }) => {
   );
 };
 
-export default sectionTitle;
+export default SectionTitle;

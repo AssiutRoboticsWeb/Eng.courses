@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import useApi from "./fetchApis/useApi.jsx";
 import axios from "axios";
 import "./App.css";
+// import Department from "./pages/departmentPage/Department.jsx";
 /* import pages */
 // import CourseInfo from "./pages/OldCourseInfo/CourseInfo.jsx";
 import Home from "./pages/homePage/Home.jsx";
@@ -32,9 +33,9 @@ function App() {
       <div
         className="core-section"
         style={{ minHeight: "83vh", marginTop: "65px" }}>
-        <Home />
+        {/* <Home /> */}
         {/* <CoursesView /> */}
-        {/* <Outlet /> */}
+        <Outlet />
       </div>
       <Footer />
     </>

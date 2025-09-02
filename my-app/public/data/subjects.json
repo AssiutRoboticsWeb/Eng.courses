@@ -1,0 +1,804 @@
+{
+  "subjects": [
+    {
+      "id": "1",
+      "name": "Intro to Design",
+      "department": "Architecture",
+      "year": "1",
+      "semester": "",
+      "description": "Fundamentals of architectural design and spatial thinking.",
+      "courses": [
+        {
+          "id": "1-1",
+          "departmentName": "Architecture",
+          "courseName": "Design Principles",
+          "instructor": "Prof. Emily Chen",
+          "duration": "45 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "1-2",
+          "departmentName": "Architecture",
+          "courseName": "Spatial Composition",
+          "instructor": "Prof. Michael Rodriguez",
+          "duration": "52 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "1-3",
+          "departmentName": "Architecture",
+          "courseName": "Form and Function",
+          "instructor": "Dr. Sarah Johnson",
+          "duration": "38 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "1-4",
+          "departmentName": "Architecture",
+          "courseName": "Design Process",
+          "instructor": "Prof. David Kim",
+          "duration": "50 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "1-5",
+          "departmentName": "Architecture",
+          "courseName": "Creative Thinking",
+          "instructor": "Dr. Lisa Anderson",
+          "duration": "42 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Building Materials",
+      "department": "Architecture",
+      "year": "2",
+      "semester": "1",
+      "description": "Study of construction materials and their structural properties.",
+      "courses": [
+        {
+          "id": "2-1",
+          "departmentName": "Architecture",
+          "courseName": "Concrete Technology",
+          "instructor": "Prof. Robert Wilson",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "2-2",
+          "departmentName": "Architecture",
+          "courseName": "Steel Structures",
+          "instructor": "Dr. Jennifer Lee",
+          "duration": "48 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "2-3",
+          "departmentName": "Architecture",
+          "courseName": "Wood and Composites",
+          "instructor": "Prof. Thomas Brown",
+          "duration": "40 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "2-4",
+          "departmentName": "Architecture",
+          "courseName": "Material Properties",
+          "instructor": "Dr. Amanda White",
+          "duration": "52 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "2-5",
+          "departmentName": "Architecture",
+          "courseName": "Sustainable Materials",
+          "instructor": "Prof. Christopher Green",
+          "duration": "45 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Urban Planning",
+      "department": "Architecture",
+      "year": "3",
+      "semester": "2",
+      "description": "Principles of city planning, zoning, and sustainable design.",
+      "courses": [
+        {
+          "id": "3-1",
+          "departmentName": "Architecture",
+          "courseName": "City Design Principles",
+          "instructor": "Prof. Maria Garcia",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "3-2",
+          "departmentName": "Architecture",
+          "courseName": "Zoning Regulations",
+          "instructor": "Dr. James Taylor",
+          "duration": "50 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "3-3",
+          "departmentName": "Architecture",
+          "courseName": "Transportation Planning",
+          "instructor": "Prof. Daniel Clark",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "3-4",
+          "departmentName": "Architecture",
+          "courseName": "Sustainable Communities",
+          "instructor": "Dr. Olivia Martin",
+          "duration": "48 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "3-5",
+          "departmentName": "Architecture",
+          "courseName": "Urban Design Studio",
+          "instructor": "Prof. Andrew Wilson",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Advanced Structural Design",
+      "department": "Architecture",
+      "year": "4",
+      "semester": "1",
+      "description": "Structural systems in large-scale architectural projects.",
+      "courses": [
+        {
+          "id": "4-1",
+          "departmentName": "Architecture",
+          "courseName": "High-Rise Structures",
+          "instructor": "Prof. Richard Moore",
+          "duration": "70 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "4-2",
+          "departmentName": "Architecture",
+          "courseName": "Seismic Design",
+          "instructor": "Dr. Patricia Lewis",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "4-3",
+          "departmentName": "Architecture",
+          "courseName": "Long-Span Structures",
+          "instructor": "Prof. Kevin Harris",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "4-4",
+          "departmentName": "Architecture",
+          "courseName": "Structural Systems",
+          "instructor": "Dr. Sophia Turner",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "4-5",
+          "departmentName": "Architecture",
+          "courseName": "Advanced Materials",
+          "instructor": "Prof. Brian Scott",
+          "duration": "62 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Circuits I",
+      "department": "Electrical",
+      "year": "1",
+      "semester": "2",
+      "description": "Basic theory of electrical circuits and current flow.",
+      "courses": [
+        {
+          "id": "5-1",
+          "departmentName": "Electrical",
+          "courseName": "DC Circuit Analysis",
+          "instructor": "Prof. Alan Thompson",
+          "duration": "45 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "5-2",
+          "departmentName": "Electrical",
+          "courseName": "Ohm's Law Applications",
+          "instructor": "Dr. Nancy Parker",
+          "duration": "40 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "5-3",
+          "departmentName": "Electrical",
+          "courseName": "Circuit Components",
+          "instructor": "Prof. George Adams",
+          "duration": "50 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "5-4",
+          "departmentName": "Electrical",
+          "courseName": "Network Theorems",
+          "instructor": "Dr. Helen Wright",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "5-5",
+          "departmentName": "Electrical",
+          "courseName": "Power in Circuits",
+          "instructor": "Prof. Charles Hill",
+          "duration": "48 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Electromagnetics",
+      "department": "Electrical",
+      "year": "2",
+      "semester": "1",
+      "description": "Electric and magnetic fields, wave propagation, and applications.",
+      "courses": [
+        {
+          "id": "6-1",
+          "departmentName": "Electrical",
+          "courseName": "Electrostatics",
+          "instructor": "Prof. Edward King",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "6-2",
+          "departmentName": "Electrical",
+          "courseName": "Magnetostatics",
+          "instructor": "Dr. Victoria Young",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "6-3",
+          "departmentName": "Electrical",
+          "courseName": "Maxwell's Equations",
+          "instructor": "Prof. Jeffrey Allen",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "6-4",
+          "departmentName": "Electrical",
+          "courseName": "Wave Propagation",
+          "instructor": "Dr. Rachel Evans",
+          "duration": "58 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "6-5",
+          "departmentName": "Electrical",
+          "courseName": "Transmission Lines",
+          "instructor": "Prof. Timothy Baker",
+          "duration": "62 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Control Systems",
+      "department": "Electrical",
+      "year": "3",
+      "semester": "2",
+      "description": "Modeling, analysis, and design of dynamic control systems.",
+      "courses": [
+        {
+          "id": "7-1",
+          "departmentName": "Electrical",
+          "courseName": "System Modeling",
+          "instructor": "Prof. Ronald Carter",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "7-2",
+          "departmentName": "Electrical",
+          "courseName": "Feedback Principles",
+          "instructor": "Dr. Michelle Hall",
+          "duration": "50 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "7-3",
+          "departmentName": "Electrical",
+          "courseName": "Stability Analysis",
+          "instructor": "Prof. Scott Walker",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "7-4",
+          "departmentName": "Electrical",
+          "courseName": "Controller Design",
+          "instructor": "Dr. Angela Roberts",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "7-5",
+          "departmentName": "Electrical",
+          "courseName": "Digital Control",
+          "instructor": "Prof. Justin Phillips",
+          "duration": "58 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Power Systems",
+      "department": "Electrical",
+      "year": "4",
+      "semester": "1",
+      "description": "Generation, transmission, and distribution of electrical power.",
+      "courses": [
+        {
+          "id": "8-1",
+          "departmentName": "Electrical",
+          "courseName": "Power Generation",
+          "instructor": "Prof. Brandon Cooper",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "8-2",
+          "departmentName": "Electrical",
+          "courseName": "Transmission Lines",
+          "instructor": "Dr. Stephanie Bell",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "8-3",
+          "departmentName": "Electrical",
+          "courseName": "Distribution Systems",
+          "instructor": "Prof. Patrick Murphy",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "8-4",
+          "departmentName": "Electrical",
+          "courseName": "Power Flow Analysis",
+          "instructor": "Dr. Rebecca Ward",
+          "duration": "70 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "8-5",
+          "departmentName": "Electrical",
+          "courseName": "Fault Analysis",
+          "instructor": "Prof. Gregory Foster",
+          "duration": "62 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Engineering Mechanics",
+      "department": "Mechanical",
+      "year": "1",
+      "semester": "2",
+      "description": "Forces, equilibrium, and mechanical systems analysis.",
+      "courses": [
+        {
+          "id": "9-1",
+          "departmentName": "Mechanical",
+          "courseName": "Statics Fundamentals",
+          "instructor": "Prof. Jonathan Reed",
+          "duration": "50 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "9-2",
+          "departmentName": "Mechanical",
+          "courseName": "Force Systems",
+          "instructor": "Dr. Kimberly Cook",
+          "duration": "45 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "9-3",
+          "departmentName": "Mechanical",
+          "courseName": "Equilibrium Analysis",
+          "instructor": "Prof. Raymond Price",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "9-4",
+          "departmentName": "Mechanical",
+          "courseName": "Truss Structures",
+          "instructor": "Dr. Deborah Long",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "9-5",
+          "departmentName": "Mechanical",
+          "courseName": "Friction Principles",
+          "instructor": "Prof. Peter Brooks",
+          "duration": "48 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Thermodynamics",
+      "department": "Mechanical",
+      "year": "2",
+      "semester": "1",
+      "description": "Energy, heat transfer, and laws of thermodynamics.",
+      "courses": [
+        {
+          "id": "10-1",
+          "departmentName": "Mechanical",
+          "courseName": "First Law Applications",
+          "instructor": "Prof. Joshua Collins",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "10-2",
+          "departmentName": "Mechanical",
+          "courseName": "Second Law Analysis",
+          "instructor": "Dr. Amy Rogers",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "10-3",
+          "departmentName": "Mechanical",
+          "courseName": "Entropy Concepts",
+          "instructor": "Prof. Henry Ward",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "10-4",
+          "departmentName": "Mechanical",
+          "courseName": "Power Cycles",
+          "instructor": "Dr. Brenda Hughes",
+          "duration": "70 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "10-5",
+          "departmentName": "Mechanical",
+          "courseName": "Refrigeration Systems",
+          "instructor": "Prof. Eugene Peterson",
+          "duration": "62 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Fluid Mechanics",
+      "department": "Mechanical",
+      "year": "3",
+      "semester": "2",
+      "description": "Behavior of fluids in motion and at rest with engineering applications.",
+      "courses": [
+        {
+          "id": "11-1",
+          "departmentName": "Mechanical",
+          "courseName": "Fluid Properties",
+          "instructor": "Prof. Walter Kelly",
+          "duration": "50 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "11-2",
+          "departmentName": "Mechanical",
+          "courseName": "Fluid Statics",
+          "instructor": "Dr. Shirley Cox",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "11-3",
+          "departmentName": "Mechanical",
+          "courseName": "Bernoulli's Equation",
+          "instructor": "Prof. Albert Bennett",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "11-4",
+          "departmentName": "Mechanical",
+          "courseName": "Flow Measurement",
+          "instructor": "Dr. Dorothy Richardson",
+          "duration": "58 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "11-5",
+          "departmentName": "Mechanical",
+          "courseName": "Dimensional Analysis",
+          "instructor": "Prof. Ralph Barnes",
+          "duration": "62 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Machine Design",
+      "department": "Mechanical",
+      "year": "4",
+      "semester": "1",
+      "description": "Design of machine elements and mechanical systems.",
+      "courses": [
+        {
+          "id": "12-1",
+          "departmentName": "Mechanical",
+          "courseName": "Stress Analysis",
+          "instructor": "Prof. Bruce Coleman",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "12-2",
+          "departmentName": "Mechanical",
+          "courseName": "Failure Theories",
+          "instructor": "Dr. Janet Simmons",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "12-3",
+          "departmentName": "Mechanical",
+          "courseName": "Shaft Design",
+          "instructor": "Prof. Philip Patterson",
+          "duration": "70 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "12-4",
+          "departmentName": "Mechanical",
+          "courseName": "Gear Systems",
+          "instructor": "Dr. Christine Bryant",
+          "duration": "68 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "12-5",
+          "departmentName": "Mechanical",
+          "courseName": "Design Optimization",
+          "instructor": "Prof. Terry Russell",
+          "duration": "72 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Engineering Drawing",
+      "department": "Civil",
+      "year": "1",
+      "semester": "2",
+      "description": "Basic drawing techniques for civil engineering structures.",
+      "courses": [
+        {
+          "id": "13-1",
+          "departmentName": "Civil",
+          "courseName": "Technical Drawing Basics",
+          "instructor": "Prof. Lawrence Morgan",
+          "duration": "45 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "13-2",
+          "departmentName": "Civil",
+          "courseName": "Orthographic Projection",
+          "instructor": "Dr. Pamela Howard",
+          "duration": "50 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "13-3",
+          "departmentName": "Civil",
+          "courseName": "Isometric Views",
+          "instructor": "Prof. Dennis Ross",
+          "duration": "48 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "13-4",
+          "departmentName": "Civil",
+          "courseName": "Sectional Views",
+          "instructor": "Dr. Ruth Peterson",
+          "duration": "52 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "13-5",
+          "departmentName": "Civil",
+          "courseName": "Dimensioning Practices",
+          "instructor": "Prof. Keith Henderson",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Surveying",
+      "department": "Civil",
+      "year": "2",
+      "semester": "1",
+      "description": "Principles and methods of land surveying and measurement.",
+      "courses": [
+        {
+          "id": "14-1",
+          "departmentName": "Civil",
+          "courseName": "Surveying Instruments",
+          "instructor": "Prof. Wayne Butler",
+          "duration": "55 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "14-2",
+          "departmentName": "Civil",
+          "courseName": "Leveling Techniques",
+          "instructor": "Dr. Katherine Powell",
+          "duration": "60 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "14-3",
+          "departmentName": "Civil",
+          "courseName": "Traverse Surveying",
+          "instructor": "Prof. Vincent Simmons",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "14-4",
+          "departmentName": "Civil",
+          "courseName": "Topographic Mapping",
+          "instructor": "Dr. Janet Foster",
+          "duration": "70 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "14-5",
+          "departmentName": "Civil",
+          "courseName": "GPS Surveying",
+          "instructor": "Prof. Bruce Patterson",
+          "duration": "62 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Structural Analysis",
+      "department": "Civil",
+      "year": "3",
+      "semester": "2",
+      "description": "Analysis of statically determinate and indeterminate structures.",
+      "courses": [
+        {
+          "id": "15-1",
+          "departmentName": "Civil",
+          "courseName": "Determinate Structures",
+          "instructor": "Prof. Philip Flores",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "15-2",
+          "departmentName": "Civil",
+          "courseName": "Influence Lines",
+          "instructor": "Dr. Martha Gibson",
+          "duration": "70 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "15-3",
+          "departmentName": "Civil",
+          "courseName": "Deflection Analysis",
+          "instructor": "Prof. Johnny Murray",
+          "duration": "75 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "15-4",
+          "departmentName": "Civil",
+          "courseName": "Indeterminate Structures",
+          "instructor": "Dr. Beverly Hamilton",
+          "duration": "80 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "15-5",
+          "departmentName": "Civil",
+          "courseName": "Matrix Methods",
+          "instructor": "Prof. Eugene Wallace",
+          "duration": "78 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Transportation Engineering",
+      "department": "Civil",
+      "year": "4",
+      "semester": "2",
+      "description": "Design and planning of transportation systems and infrastructure.",
+      "courses": [
+        {
+          "id": "16-1",
+          "departmentName": "Civil",
+          "courseName": "Highway Design",
+          "instructor": "Prof. Arthur Mendez",
+          "duration": "70 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "16-2",
+          "departmentName": "Civil",
+          "courseName": "Traffic Engineering",
+          "instructor": "Dr. Doris Sanders",
+          "duration": "65 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "16-3",
+          "departmentName": "Civil",
+          "courseName": "Pavement Design",
+          "instructor": "Prof. Louis Olson",
+          "duration": "75 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "16-4",
+          "departmentName": "Civil",
+          "courseName": "Public Transportation",
+          "instructor": "Dr. Anna Fowler",
+          "duration": "68 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        },
+        {
+          "id": "16-5",
+          "departmentName": "Civil",
+          "courseName": "Transportation Planning",
+          "instructor": "Prof. Russell Fisher",
+          "duration": "72 minutes",
+          "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+        }
+      ]
+    }
+  ]
+}

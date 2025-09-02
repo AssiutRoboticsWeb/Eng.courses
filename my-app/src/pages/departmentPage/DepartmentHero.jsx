@@ -18,7 +18,7 @@ const DepartmentHero = ({ departmentName, setYear, setSemester }) => {
                   className="
                    w-20 text-center bg-white text-base border-1 outline-none border-gray-300 rounded-md cursor-pointer
                    ">
-                  semester
+                  year
                 </label>
                 <select
                   name="select-year"
@@ -26,7 +26,13 @@ const DepartmentHero = ({ departmentName, setYear, setSemester }) => {
                   className="
                   text-base border-1 outline-none border-gray-300 rounded-md cursor-pointer
                     w-10"
-                  onChange={(e) => setYear(+e.target.value)}>
+                  onChange={(e) => {
+                    const value = +e.target.value;
+                    if (value == "0") return; // ignore the "-" option
+                    setYear(value);
+                  }}>
+                  {/* onChange={(e) => setYear(+e.target.value)}> */}
+                  <option value="0">-</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -38,14 +44,20 @@ const DepartmentHero = ({ departmentName, setYear, setSemester }) => {
                   htmlFor="select-semester"
                   className="
                   w-20 text-center bg-white text-base border-1 outline-none border-gray-300 rounded-md cursor-pointer">
-                  year
+                  semester
                 </label>
                 <select
                   name="select-semester"
                   id=""
                   className="text-base border-1 outline-none border-gray-300 rounded-md cursor-pointer
                     w-10"
-                  onChange={(e) => setSemester(+e.target.value)}>
+                  // onChange={(e) => setSemester(+e.target.value)}>
+                  onChange={(e) => {
+                    let value = +e.target.value;
+                    if (value == "0") return;
+                    setSemester(value);
+                  }}>
+                  <option value="0">-</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                 </select>

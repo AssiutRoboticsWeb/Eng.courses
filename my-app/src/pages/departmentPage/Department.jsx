@@ -4,6 +4,7 @@ import DepartmentHero from "./DepartmentHero";
 import DepartmentTitle from "./DepartmentTitle";
 import CourseCard from "../homePage/CourseCard";
 import Years from "../../components/courses/coursesView/yearsBar";
+import Subjects from "../Subjects";
 const Department = () => {
   let { deprtName } = useParams();
   const departmentName = `${deprtName} Department`;
@@ -68,7 +69,7 @@ const Department = () => {
       videoUrl: "https://www.youtube.com/embed/PLACEHOLDER", // replace with real link
     },
   ];
-  
+
   return (
     <div className="bg-blue-50">
       <DepartmentHero
@@ -81,7 +82,9 @@ const Department = () => {
         <DepartmentTitle DepartmentTitle={{ departmentName, year, semester }} />
       )}
       {/* ---------------------------------------------------------------------------- */}
-      {year && semester && (
+      <Subjects  deprtName={deprtName} year={year} semester={semester} />
+
+      {/* {year && semester && (
         <section>
           <ul
             className="departments-list  px-4 bg-blue-50  mb-5 p-7 text-center
@@ -91,7 +94,7 @@ const Department = () => {
             })}
           </ul>
         </section>
-      )}
+      )} */}
     </div>
   );
 };

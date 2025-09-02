@@ -4,6 +4,8 @@ import App from "../App";
 import Home from "../pages/homePage/Home.jsx";
 import About from "../pages/aboutPage/About.jsx";
 import Department from "../pages/departmentPage/Department.jsx";
+import CoursesPage from "../pages/CoursesPage.jsx";
+import MyCourses from "../pages/myCoursesPage/MyCoursees.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,8 +21,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/department/:deprtName",
-        // path: "/department",
         element: <Department />,
+      },
+      {
+        path: "/department/:deprtName/:courseId",
+        element: <CoursesPage />,
+      },
+      {
+        path: "/myCourses",
+        element: <MyCourses />,
       },
     ],
   },

@@ -7,7 +7,7 @@ const DepartmentCard = ({ departmentDetails }) => {
     return <p>Loading...</p>;
   }
   return (
-    <li className="department ">
+    <li className="department">
       <Link
         // to={`/${departmentDetails.name?.trim()}`}
         to={`/department/${departmentDetails.name?.trim()}`}

@@ -1,140 +1,20 @@
 {
   "enrolledCourses": [
     {
-      "id": "cdb207ea-1763-44b1-be28-b29c9317d6a8",
-      "departmentName": "Electrical Engineering",
-      "courseName": "Power Systems Analysis",
-      "instructor": "Dr. Sara Ali",
-      "duration": "35",
-      "videoUrl": "https://www.youtube.com/embed/fBm1dr_gRBk"
-    },
-    {
-      "id": "59bf3ecd-3148-4c88-9069-8ae598fe3def",
-      "departmentName": "Computer Engineering",
-      "courseName": "Data Structures & Algorithms",
-      "instructor": "Dr. Mona Khaled",
-      "duration": "40",
-      "videoUrl": "https://www.youtube.com/embed/PLACEHOLDER"
-    },
-    {
-      "id": "1ca750c4-362c-4b26-9c1e-45b43f88c47c",
-      "departmentName": "Civil Engineering",
+      "id": "ca066eb1-846f-4748-932a-bea896e79a84",
+      "departmentName": "Civil",
       "courseName": "Concrete Structures Design",
       "instructor": "Dr. Mahmoud Hassan",
       "duration": "28",
       "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
     },
     {
-      "id": "b73fad33-3180-4023-80e9-6f8f827e0e8e",
-      "departmentName": "Electrical Engineering",
-      "courseName": "Power Systems Analysis",
-      "instructor": "Dr. Sara Ali",
-      "duration": "35",
-      "videoUrl": "https://www.youtube.com/embed/fBm1dr_gRBk"
-    },
-    {
-      "id": "afcc4a6c-7da1-4a82-929f-c9790fa01a70",
-      "departmentName": "Electrical Engineering",
-      "courseName": "Power Systems Analysis",
-      "instructor": "Dr. Sara Ali",
-      "duration": "35",
-      "videoUrl": "https://www.youtube.com/embed/fBm1dr_gRBk"
-    },
-    {
-      "id": "6b88207b-bb32-4196-aa6e-437bc438d732",
-      "departmentName": "Civil Engineering",
-      "courseName": "Concrete Structures Design",
-      "instructor": "Dr. Mahmoud Hassan",
-      "duration": "28",
+      "id": "10-1",
+      "departmentName": "Mechanical",
+      "courseName": "First Law Applications",
+      "instructor": "Prof. Joshua Collins",
+      "duration": "55 minutes",
       "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
-    },
-    {
-      "id": "301de039-9b2e-4a82-a1e9-e2f5f4c34936",
-      "departmentName": "Electrical Engineering",
-      "courseName": "Power Systems Analysis",
-      "instructor": "Dr. Sara Ali",
-      "duration": "35",
-      "videoUrl": "https://www.youtube.com/embed/fBm1dr_gRBk"
-    },
-    {
-      "id": "91b822a9-2aca-4d0a-8880-ec36d86d1797",
-      "departmentName": "Civil Engineering",
-      "courseName": "Concrete Structures Design",
-      "instructor": "Dr. Mahmoud Hassan",
-      "duration": "28",
-      "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
-    },
-    {
-      "id": "24afd155-ea14-49ac-a823-07f391678957",
-      "departmentName": "Electrical Engineering",
-      "courseName": "Power Systems Analysis",
-      "instructor": "Dr. Sara Ali",
-      "duration": "35",
-      "videoUrl": "https://www.youtube.com/embed/fBm1dr_gRBk"
-    },
-    {
-      "id": "bec4ccaa-c6d1-43d8-832e-45655fbf972b",
-      "departmentName": "Mechanical Engineering",
-      "courseName": "Thermodynamics Basics",
-      "instructor": "Prof. Ahmed Youssef",
-      "duration": "24",
-      "videoUrl": "https://www.youtube.com/embed/PLACEHOLDER"
-    },
-    {
-      "id": "5fd42e86-cade-4a0e-8abe-04fb91f22179",
-      "departmentName": "Computer Engineering",
-      "courseName": "Data Structures & Algorithms",
-      "instructor": "Dr. Mona Khaled",
-      "duration": "40",
-      "videoUrl": "https://www.youtube.com/embed/PLACEHOLDER"
-    },
-    {
-      "id": "a0968b9c-b5c6-4574-b530-4d1b91a97735",
-      "departmentName": "Electrical Engineering",
-      "courseName": "Power Systems Analysis",
-      "instructor": "Dr. Sara Ali",
-      "duration": "35",
-      "videoUrl": "https://www.youtube.com/embed/fBm1dr_gRBk"
-    },
-    {
-      "id": "13ec821f-936e-4627-8ed3-04d55b2f0d4d",
-      "departmentName": "Civil Engineering",
-      "courseName": "Transportation Engineering",
-      "instructor": "Prof. Tarek El-Sayed",
-      "duration": "29",
-      "videoUrl": "https://www.youtube.com/embed/PLACEHOLDER"
-    },
-    {
-      "id": "d3612a7b-73dc-4aa0-8874-305226fd5180",
-      "departmentName": "Civil Engineering",
-      "courseName": "Concrete Structures Design",
-      "instructor": "Dr. Mahmoud Hassan",
-      "duration": "28",
-      "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
-    },
-    {
-      "id": "8e4cd0b6-7d06-4788-9e45-db202422d27b",
-      "departmentName": "Electrical Engineering",
-      "courseName": "Power Systems Analysis",
-      "instructor": "Dr. Sara Ali",
-      "duration": "35",
-      "videoUrl": "https://www.youtube.com/embed/fBm1dr_gRBk"
-    },
-    {
-      "id": "0203471d-e6f5-41b2-8900-4ea9034e3f5f",
-      "departmentName": "Mechanical Engineering",
-      "courseName": "Thermodynamics Basics",
-      "instructor": "Prof. Ahmed Youssef",
-      "duration": "24",
-      "videoUrl": "https://www.youtube.com/embed/PLACEHOLDER"
-    },
-    {
-      "id": "9354866b-54c1-48a2-bcf7-dfdc578ab6ce",
-      "departmentName": "Computer Engineering",
-      "courseName": "Data Structures & Algorithms",
-      "instructor": "Dr. Mona Khaled",
-      "duration": "40",
-      "videoUrl": "https://www.youtube.com/embed/PLACEHOLDER"
     }
   ]
 }
