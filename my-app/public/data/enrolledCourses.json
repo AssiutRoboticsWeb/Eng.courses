@@ -15,6 +15,14 @@
       "instructor": "Prof. Joshua Collins",
       "duration": "55 minutes",
       "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+    },
+    {
+      "id": "5-2",
+      "departmentName": "Electrical",
+      "courseName": "Ohm's Law Applications",
+      "instructor": "Dr. Nancy Parker",
+      "duration": "40 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
     }
   ]
 }

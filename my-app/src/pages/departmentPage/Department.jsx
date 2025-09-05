@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import DepartmentHero from "./DepartmentHero";
 import DepartmentTitle from "./DepartmentTitle";
-import CourseCard from "../homePage/CourseCard";
-import Years from "../../components/courses/coursesView/yearsBar";
+// import CourseCard from "../homePage/CourseCard";
 import Subjects from "../Subjects";
 const Department = () => {
   let { deprtName } = useParams();

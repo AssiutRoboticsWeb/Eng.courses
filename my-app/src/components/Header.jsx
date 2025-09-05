@@ -1,4 +1,4 @@
-import { useState , useRef } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router";
 // import icon
 import { CgProfile } from "react-icons/cg";
@@ -54,21 +54,29 @@ import { CiMenuBurger } from "react-icons/ci";
 // }
 
 const Header = () => {
-  const [isHeaderSelectOpen, setIsHeaderSelectOpen] = useState(false);
   const [isHeaderMenuOpen, setIsHeaderMenuOpen] = useState(false);
 
   return (
-    <header className="conatiner fixed z-50 top-0 w-full  px-4 py-2 bg-white shadow-lg h-16 capitalize flex items-center font-bold justify-between bg-sky-600 ">
+    <header
+      className="conatiner fixed z-50 top-0 w-full  px-4 py-2 bg-white shadow-lg h-16 capitalize flex items-center font-bold justify-between 
+    ">
       {/* ---------------------------------- logo ----------------------------------  */}
-      <figure className="logo w-1/2 md:w-1/4">
+      <figure className="logo w-1/2 md:w-1/4 min-w-max">
         <h2 className="text-2xl font-bold ">eng-learning</h2>
       </figure>
-      {/* ---------------------------------- menu ---------------------------------- */}
-      <ul className="menu flex hidden justify-evenly md:flex  md:w-1/2  lg:text-xl    ">
-        <li>
-          <Link to="/">home</Link>
-        </li>
-        {/* <li>
+      <aside
+        className={`header-menu  bg-blue-50 absolute top-full w-full left-0 text-center rounded-b-lg
+          md:flex md:justify-between md:items-center md:relative md:left-0 md:top-0    pb-4 md:pb-0 
+          ${isHeaderMenuOpen ? "flex-col md:flex-row" : "hidden md:flex"}
+        `}>
+        {/* ---------------------------------- menu ---------------------------------- */}
+        <ul
+          className={`menu   md:w-2/3 md:flex  md:justify-evenly  
+        `}>
+          <li>
+            <Link to="/">home</Link>
+          </li>
+          {/* <li>
           <Link to="/Not-Done-yet">Departments</Link>
           <select
             name=""
@@ -90,30 +98,39 @@ const Header = () => {
             </optgroup>
           </select>
         </li> */}
-        <li className="whitespace-nowrap">
-          <Link to="/myCourses">my courses</Link>
-        </li>
-        <li>
-          <Link to="/about">about</Link>
-        </li>
-      </ul>
-      {/* ---------------------------------- login singup --------------------------- */}
-      <div className="login-singup hidden md:flex gap-4 ">
-        <button
-          id="login"
-          className="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <Link to="https://eng-courses-server.vercel.app">login</Link>
-        </button>
-        <button
-          id="singup"
-          className="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <Link to="https://eng-courses-server.vercel.app">singup</Link>
-        </button>
-      </div>
+          <li className="whitespace-nowrap">
+            <Link to="/myCourses">my courses</Link>
+          </li>
+          <li>
+            <Link to="/about">about</Link>
+          </li>
+        </ul>
+        {/* ---------------------------------- login singup --------------------------- */}
+        <div
+          className={`login-singup flex flex-col gap-4 md:flex-row   max-w-sm m-auto md:m-0 
+        `}>
+          <button
+            id="login"
+            className="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <Link to="https://eng-courses-server.vercel.app">login</Link>
+          </button>
+          <button
+            id="singup"
+            className="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <Link to="https://eng-courses-server.vercel.app">singup</Link>
+          </button>
+        </div>
+      </aside>
       {/* ---------------------------------- profile --------------------------- */}
       <div className="profile flex  gap-4">
         <CgProfile size={40} className="block md:hidden" />
-        <CiMenuBurger size={40} className="block md:hidden" />
+        <CiMenuBurger
+          size={40}
+          className="block md:hidden"
+          onClick={() => {
+            setIsHeaderMenuOpen(!isHeaderMenuOpen);
+          }}
+        />
       </div>
     </header>
   );
