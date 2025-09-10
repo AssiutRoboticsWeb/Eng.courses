@@ -3,19 +3,21 @@ const router = express.Router()
 const YearController = require('../controller/year.controller')
 const checkRole = require('../middlewares/checkRole')
 
-// Apply role-based middleware
+// Apply role-based middleware ٍ
 // router.use(checkRole("manager", "admin"))
 
 
+//  Subjects Management
+router.post('/:trackId/:yearId/first-semester/subjects', YearController.addSubjectToFirstSemester)
+router.post('/:trackId/:yearId/second-semester/subjects', YearController.addSubjectToSecondSemester)
 
-// Course management routes
-router.post('/:id/first-semester/subjects', YearController.addSubjectToFirstSemester)
-router.post('/:id/second-semester/subjects', YearController.addSubjectToSecondSemester)
+router.delete('/:trackId/:yearId/first-semester/subjects/:subjectId', YearController.removeSubjectFromFirstSemester)
+router.delete('/:trackId/:yearId/second-semester/subjects/:subjectId', YearController.removeSubjectFromSecondSemester)
 
-// router.put('/:id/first-semester/courses/:courseId', YearController.updateCourseInFirstSemester)
-// router.put('/:id/second-semester/courses/:courseId', YearController.updateCourseInSecondSemester)
 
-router.delete('/:id/first-semester/subjects/:subjectId', YearController.removeSubjectFromFirstSemester)
-router.delete('/:id/second-semester/subjects/:subjectId', YearController.removeSubjectFromSecondSemester)
+//  Years Management
+router.post('/:trackId/add-year', YearController.addYear)
+router.delete('/:trackId/:yearId', YearController.deleteYear)
+
 
 module.exports = router

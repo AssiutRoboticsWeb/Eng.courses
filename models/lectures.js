@@ -1,39 +1,28 @@
-const monggose=require('mongoose')
+// models/lecture.js
+const mongoose = require('mongoose')
 
-
-const LectureSchema=monggose.Schema({
-    title:{
-        type:String,
-        default:""
-        // required:[true,"Title is required"]
+const LectureSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: [true, "Title is required"]
+  },
+  description: {
+    type: String,
+    default: ""
+  },
+  videos: [{
+    type: String // URLs
+  }],
+  material: [{
+    name: {
+      type: String,
+      default: "material"
     },
-    description:{
-        type:String,
-        default:""
-        // required:[true,"Description is required"]
-    },
-    videos:[{
-        type:String,
-        required:[true,"Video is required"]
-    }],
-    course:{
-        type:monggose.Schema.Types.ObjectId,
-        ref:"Course"
-    },
-    material:[{
-      name:{
-        type:String,
-        default:"material"
-      },
-      url:{
-        type:String,
-        required:[true,"Url is required"],
-        default:""
-      }
-    }]
-})
+    url: {
+      type: String,
+      required: [true, "Url is required"]
+    }
+  }]
+}, { timestamps: true })
 
-
-
-
-module.exports=monggose.model('Lecture',LectureSchema)
+module.exports = mongoose.model('Lecture', LectureSchema)

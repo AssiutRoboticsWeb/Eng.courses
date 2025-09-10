@@ -1,101 +1,116 @@
 const asyncHandler = require('../utils/asyncHandler')
-const appError = require("../utils/AppError")
-const Track = require('../models/track').Track
-const YearSchema = require('../models/track').YearSchema
-const Subject = require('../models/subject').Subject
-
+const AppError = require("../utils/AppError")
+const { Track } = require('../models/track')
+const Subject = require('../models/subject')
 
 // Add subject to first semester
 const addSubjectToFirstSemester = asyncHandler(async (req, res) => {
-    const yearId = req.params.id
+    const { trackId, yearId } = req.params
     const { name, description } = req.body
 
     if (!name) {
-        throw appError("Name is required", 400)
+        throw new AppError("Name is required", 400)
     }
 
-    const year = await YearSchema.findById(yearId)
+    const track = await Track.findById(trackId)
+        .populate('years.firstSemester.subjects')
+        .populate('years.secondSemester.subjects')
+
+    if (!track) {
+        throw new AppError("Track not found", 404)
+    }
+
+    const year = track.years.id(yearId)
     if (!year) {
-        throw appError("Year not found", 404)
+        throw new AppError("Year not found", 404)
     }
 
-    const subject=await Subject.create({name,description})
-    year.firstSemester.subjects.push(subject)
-    await year.save()
-
-    const updatedYear = await YearSchema.findById(yearId).populate('firstSemester.subjects').populate('secondSemester.subjects')
+    const subject = await Subject.create({ name, description })
+    year.firstSemester.subjects.push(subject._id)
+    await track.save()
 
     res.status(200).json({
         status: true,
         message: "Subject added to first semester successfully",
-        data: updatedYear
+        data: track
     })
 })
 
 // Add subject to second semester
 const addSubjectToSecondSemester = asyncHandler(async (req, res) => {
-    const yearId = req.params.id
+    const { trackId, yearId } = req.params
     const { subjectId } = req.body
 
     if (!subjectId) {
-        throw appError("Subject ID is required", 400)
+        throw new AppError("Subject ID is required", 400)
     }
 
-    const year = await YearSchema.findById(yearId)
+    const track = await Track.findById(trackId)
+        .populate('years.firstSemester.subjects')
+        .populate('years.secondSemester.subjects')
+
+    if (!track) {
+       throw new AppError("Track not found", 404)
+    }
+
+    const year = track.years.id(yearId)
     if (!year) {
-        throw appError("Year not found", 404)
+        throw new AppError("Year not found", 404)
     }
 
     year.secondSemester.subjects.push(subjectId)
-    await year.save()
-
-    const updatedYear = await YearSchema.findById(yearId).populate('firstSemester.subjects').populate('secondSemester.subjects')
+    await track.save()
 
     res.status(200).json({
         status: true,
         message: "Subject added to second semester successfully",
-        data: updatedYear
+        data: track
     })
 })
 
 // Remove subject from first semester
 const removeSubjectFromFirstSemester = asyncHandler(async (req, res) => {
-    const yearId = req.params.id
-    const { subjectId } = req.body
+    const { trackId, yearId, subjectId } = req.params
 
-    if (!subjectId) {
-        throw appError("Subject ID is required", 400)
+    const track = await Track.findById(trackId)
+        .populate('years.firstSemester.subjects')
+        .populate('years.secondSemester.subjects')
+
+    if (!track) {
+       throw new AppError("Track not found", 404)
     }
 
-    const year = await YearSchema.findById(yearId)
+    const year = track.years.id(yearId)
     if (!year) {
-        throw appError("Year not found", 404)
+        throw new AppError("Year not found", 404)
     }
 
     year.firstSemester.subjects = year.firstSemester.subjects.filter(
         subject => subject.toString() !== subjectId
     )
-    await year.save()
 
-    const updatedYear = await YearSchema.findById(yearId).populate('firstSemester.subjects').populate('secondSemester.subjects')
+    await track.save()
 
     res.status(200).json({
         status: true,
         message: "Subject removed from first semester successfully",
-        data: updatedYear
+        data: track
     })
 })
 
 // Remove subject from second semester
 const removeSubjectFromSecondSemester = asyncHandler(async (req, res) => {
-    const yearId = req.params.id
-    const { subjectId } = req.body
+    const { trackId, yearId, subjectId } = req.params
 
-    if (!subjectId) {
-        throw appError("Subject ID is required", 400)
+    const track = await Track.findById(trackId)
+        .populate('years.firstSemester.subjects')
+        .populate('years.secondSemester.subjects')
+
+    if (!track) {
+        throw new AppError("Track not found", 404)
     }
 
-    const year = await YearSchema.findById(yearId)
+    const year = track.years.id(yearId)
     if (!year) {
         throw appError("Year not found", 404)
     }
@@ -103,21 +118,69 @@ const removeSubjectFromSecondSemester = asyncHandler(async (req, res) => {
     year.secondSemester.subjects = year.secondSemester.subjects.filter(
         subject => subject.toString() !== subjectId
     )
-    await year.save()
 
-    const updatedYear = await YearSchema.findById(yearId).populate('firstSemester.subjects').populate('secondSemester.subjects')
+    await track.save()
 
     res.status(200).json({
         status: true,
         message: "Subject removed from second semester successfully",
-        data: updatedYear
+        data: track
+    })
+})
+
+// Add a new Year to a Track
+const addYear = asyncHandler(async (req, res) => {
+    const { trackId } = req.params
+    const { name } = req.body
+
+    if (!name) {
+        throw new AppError("Year name is required", 400)
+    }
+
+    const track = await Track.findById(trackId)
+    if (!track) {
+        throw new AppError("Track not found", 404)
+    }
+
+    track.years.push({
+        name,
+        firstSemester: { subjects: [] },
+        secondSemester: { subjects: [] }
+    })
+
+    await track.save()
+
+    res.status(201).json({
+        status: true,
+        message: "Year added successfully",
+        data: track
+    })
+})
+
+// Remove a Year from a Track
+const deleteYear = asyncHandler(async (req, res) => {
+    const { trackId, yearId } = req.params
+
+    const track = await Track.findById(trackId)
+    if (!track) {
+        throw new AppError("Track not found", 404)
+    }
+
+    track.years = track.years.filter(y => y._id.toString() !== yearId)
+    await track.save()
+
+    res.status(200).json({
+        status: true,
+        message: "Year deleted successfully",
+        data: track
     })
 })
 
 module.exports = {
-
     addSubjectToFirstSemester,
     addSubjectToSecondSemester,
     removeSubjectFromFirstSemester,
-    removeSubjectFromSecondSemester
+    removeSubjectFromSecondSemester,
+    addYear,
+    deleteYear
 }

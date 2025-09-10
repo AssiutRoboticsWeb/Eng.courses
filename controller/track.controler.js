@@ -1,7 +1,7 @@
 const asyncHandler=require('../utils/asyncHandler')
-const appError=require("../utils/AppError")
+const AppError=require("../utils/AppError")
 const Track=require('../models/track').Track
-const YearSchema=require('../models/track').YearSchema
+YearSchema=require('../models/track').YearSchema
 const monggose=require('mongoose')
 
 
@@ -18,7 +18,7 @@ const getTrackById=asyncHandler(async(req,res)=>{
     const trackId=req.params.id
     const track=await Track.findById(trackId)
     if(!track){
-        throw appError("Track not found",404)
+        throw new AppError("Track not found",404)
     }
     res.status(200).json({
         status:true,
@@ -27,52 +27,42 @@ const getTrackById=asyncHandler(async(req,res)=>{
     })
 })
 
-const addTrack= asyncHandler(async(req,res)=>{
-    const {name,type}=await Track.create(req.body);
-    if(!name){
-        throw appError("name is required",400)
+const addTrack = asyncHandler(async (req, res) => {
+    const { name, type } = req.body;
+
+    if (!name) {
+        throw new AppError("name is required", 400)
     }
-    if(!type){
-        throw appError("type is required",400)
+    if (!type) {
+        throw new AppError("type is required", 400)
     }
+
     // add 5 years by default
-    let years=[]
-    for(let i=0;i<5;i++){
-        const year=new YearSchema({
-            name:`Year ${i+1}`,
-            firstSemester:{
-                subjects:[{
-                    type:monggose.Schema.Types.ObjectId,
-                    ref:"Subject"
-                }]  
-            },  
-            secondSemester:{
-                subjects:[{
-                    type:monggose.Schema.Types.ObjectId,
-                    ref:"Subject"
-                }]
-            },
-        })
-        years.push(year)
-        console.log(`added year${i+1}`);
-        
-    }
-
-    const newTrack= new Track({
-        name,
-        type,
-        years,
-        
+let years = []
+for (let i = 0; i < 5; i++) {
+    years.push({
+        name: `Year ${i + 1}`,
+        firstSemester: { subjects: [] },
+        secondSemester: { subjects: [] }
     })
+}
 
-    newTrack.save()
-    res.status(201).json({
-        status:true,
-        message:"Track created successfully",
-        data:newTrack
-    })
-
+const newTrack = new Track({
+    name,
+    type,
+    years
 })
+
+await newTrack.save()
+
+
+    res.status(201).json({
+        status: true,
+        message: "Track created successfully",
+        data: newTrack
+    })
+})
+
 
 
 const editTrack= asyncHandler(async(req,res)=>{
@@ -80,20 +70,22 @@ const editTrack= asyncHandler(async(req,res)=>{
     const {name,type}=req.body;
 
     if(!name){
-        throw appError("name is required",400)
+        throw new AppError("name is required",400)
     }
     if(!type){
-        throw appError("type is required",400)
+        throw new AppError("type is required",400)
     }
-    await Track.findByIdAndUpdate(trackId,{
-        name,
-        type
-    })
+
+    const updatedTrack = await Track.findByIdAndUpdate(
+        trackId,
+        { name, type },
+        { new: true } // يرجّع التراك بعد التعديل
+    )
 
     res.status(200).json({
         status:true,
         message:"Track updated successfully",
-        data:newTrack
+        data: updatedTrack
     })
 })
 
@@ -102,7 +94,7 @@ const deleteTrack=asyncHandler(async (req,res)=>{
     const trackId=req.params.id;
     const track=await Track.findById(trackId)
     if(!track){
-        throw appError("Track not found",404)
+        throw new AppError("Track not found",404)
     }
     // delete track
     // await track.remove()

@@ -34,6 +34,9 @@ const authRoutes = require("./routes/auth");
 const trackRoutes = require("./routes/track");
 // <<<<<<< HEAD
 const yearRoutes = require("./routes/year");
+const courseRoutes = require("./routes/course");
+
+
 
 
 // =======
@@ -46,6 +49,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use("/api/auth", authRoutes); 
 app.use("/api/track", trackRoutes);
 app.use("/api/year", yearRoutes);
+app.use("/api/course", courseRoutes);
 
 
 // app.use("*", (req, res) => { 
