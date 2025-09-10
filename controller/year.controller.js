@@ -176,11 +176,32 @@ const deleteYear = asyncHandler(async (req, res) => {
     })
 })
 
+// Get all years for a track
+const getAllYears = asyncHandler(async (req, res) => {
+    const { trackId } = req.params
+
+    const track = await Track.findById(trackId)
+        .populate('years.firstSemester.subjects')
+        .populate('years.secondSemester.subjects')
+
+    if (!track) {
+        throw new AppError("Track not found", 404)
+    }
+
+    res.status(200).json({
+        status: true,
+        message: "Years fetched successfully",
+        data: track.years
+    })
+})
+
 module.exports = {
     addSubjectToFirstSemester,
     addSubjectToSecondSemester,
     removeSubjectFromFirstSemester,
     removeSubjectFromSecondSemester,
     addYear,
-    deleteYear
+    deleteYear,
+    getAllYears,
+
 }

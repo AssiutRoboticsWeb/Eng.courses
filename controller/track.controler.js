@@ -5,27 +5,56 @@ YearSchema=require('../models/track').YearSchema
 const monggose=require('mongoose')
 
 
-const getAllTracks=asyncHandler(async(req,res)=>{   
-    const tracks=await Track.find({})
+const getAllTracks = asyncHandler(async (req, res) => {   
+    const tracks = await Track.find({})
+           .populate({
+         path: 'years.firstSemester.subjects',
+         model: 'Subject',
+         select : '_id name description '
+        }
+           )
+
+  .populate({
+         path: 'years.secondSemester.subjects',
+         model: 'Subject',
+         select : '_id name description '
+        })
     res.status(200).json({
-        status:true,
-        message:"Tracks fetched successfully",
-        data:tracks
+        status: true,
+        message: "Tracks fetched successfully",
+        data: tracks
+    })
+
+})
+
+
+const getTrackById = asyncHandler(async (req, res) => {
+    const trackId = req.params.id
+    const track = await Track.findById(trackId)
+        .populate({
+         path: 'years.firstSemester.subjects',
+         model: 'Subject',
+         select : '_id name description '
+        }
+           )
+
+  .populate({
+         path: 'years.secondSemester.subjects',
+         model: 'Subject',
+         select : '_id name description '
+        }
+           )
+    if (!track) {
+        throw new AppError("Track not found", 404)
+    }
+
+    res.status(200).json({
+        status: true,
+        message: "Track fetched successfully",
+        data: track
     })
 })
 
-const getTrackById=asyncHandler(async(req,res)=>{
-    const trackId=req.params.id
-    const track=await Track.findById(trackId)
-    if(!track){
-        throw new AppError("Track not found",404)
-    }
-    res.status(200).json({
-        status:true,
-        message:"Track fetched successfully",
-        data:track
-    })
-})
 
 const addTrack = asyncHandler(async (req, res) => {
     const { name, type } = req.body;
@@ -65,29 +94,36 @@ await newTrack.save()
 
 
 
-const editTrack= asyncHandler(async(req,res)=>{
-    const trackId=req.params.id
-    const {name,type}=req.body;
+const editTrack = asyncHandler(async (req, res) => {
+    const trackId = req.params.id
+    const { name, type } = req.body;
 
-    if(!name){
-        throw new AppError("name is required",400)
+    if (!name) {
+        throw new AppError("name is required", 400)
     }
-    if(!type){
-        throw new AppError("type is required",400)
+    if (!type) {
+        throw new AppError("type is required", 400)
     }
 
-    const updatedTrack = await Track.findByIdAndUpdate(
+    let updatedTrack = await Track.findByIdAndUpdate(
         trackId,
         { name, type },
-        { new: true } // يرجّع التراك بعد التعديل
+        { new: true } 
     )
+    .populate('years.firstSemester.subjects')
+    .populate('years.secondSemester.subjects')
+
+    if (!updatedTrack) {
+        throw new AppError("Track not found", 404)
+    }
 
     res.status(200).json({
-        status:true,
-        message:"Track updated successfully",
+        status: true,
+        message: "Track updated successfully",
         data: updatedTrack
     })
 })
+
 
 
 const deleteTrack=asyncHandler(async (req,res)=>{

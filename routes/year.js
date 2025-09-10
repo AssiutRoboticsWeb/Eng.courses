@@ -19,5 +19,7 @@ router.delete('/:trackId/:yearId/second-semester/subjects/:subjectId', YearContr
 router.post('/:trackId/add-year', YearController.addYear)
 router.delete('/:trackId/:yearId', YearController.deleteYear)
 
+//  Get all years of a track
+router.get('/:trackId/years', YearController.getAllYears)
 
 module.exports = router

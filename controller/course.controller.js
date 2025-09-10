@@ -213,6 +213,43 @@ const deleteLecture = asyncHandler(async (req, res) => {
     data: course
   })
 })
+// Get all chapters for a course
+const getAllChapters = asyncHandler(async (req, res) => {
+  const { courseId } = req.params
+
+  const course = await Course.findById(courseId).populate('chapters.lectures')
+  if (!course) {
+    throw new AppError("Course not found", 404)
+  }
+
+  res.status(200).json({
+    status: true,
+    message: "Chapters fetched successfully",
+    data: course.chapters
+  })
+})
+
+// Get all lectures for a chapter
+const getAllLectures = asyncHandler(async (req, res) => {
+  const { courseId, chapterId } = req.params
+
+  const course = await Course.findById(courseId).populate('chapters.lectures')
+  if (!course) {
+    throw new AppError("Course not found", 404)
+  }
+
+  const chapter = course.chapters.id(chapterId)
+  if (!chapter) {
+    throw new AppError("Chapter not found", 404)
+  }
+
+  res.status(200).json({
+    status: true,
+    message: "Lectures fetched successfully",
+    data: chapter.lectures
+  })
+})
+
 module.exports = {
     createCourse,
     getAllCourses,
@@ -222,5 +259,7 @@ module.exports = {
     addChapter,
     deleteChapter,
     addLecture,
-    deleteLecture
+    deleteLecture,
+    getAllChapters,
+    getAllLectures
 }

@@ -16,5 +16,7 @@ router.delete('/:courseId/chapters/:chapterId', CourseController.deleteChapter)
 // ✅ Lectures routes
 router.post('/:courseId/chapters/:chapterId/lectures', CourseController.addLecture)
 router.delete('/:courseId/chapters/:chapterId/lectures/:lectureId', CourseController.deleteLecture)
+router.get('/:courseId/chapters', CourseController.getAllChapters)
+router.get('/:courseId/chapters/:chapterId/lectures', CourseController.getAllLectures)
 
 module.exports = router
