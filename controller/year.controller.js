@@ -127,6 +127,23 @@ const removeSubjectFromSecondSemester = asyncHandler(async (req, res) => {
         data: track
     })
 })
+// Get subject by ID
+const getSubjectById = asyncHandler(async (req, res) => {
+    const { subjectId } = req.params;
+
+    const subject = await Subject.findById(subjectId).populate("courses"); // لو عايزة تجيبي الكورسات المرتبطة بيه
+
+    if (!subject) {
+        throw new AppError("Subject not found", 404);
+    }
+
+    res.status(200).json({
+        status: true,
+        message: "Subject fetched successfully",
+        data: subject
+    });
+});
+
 
 // Add a new Year to a Track
 const addYear = asyncHandler(async (req, res) => {
@@ -203,5 +220,6 @@ module.exports = {
     addYear,
     deleteYear,
     getAllYears,
+    getSubjectById
 
 }

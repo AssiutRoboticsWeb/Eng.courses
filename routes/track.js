@@ -22,6 +22,7 @@ router.route('/:id')
 .delete(TrackController.deleteTrack);
 
 
+router.post('/add-subject', TrackController.addSubjectToTrack);
 
 
 

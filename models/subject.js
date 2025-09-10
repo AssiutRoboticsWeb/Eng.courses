@@ -9,13 +9,11 @@ const SubjectSchema = new mongoose.Schema({
   description: {
     type: String,
     default: ""
-  }
-  ,courses:{
+  },
+  courses: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Course",
-    required: [true, "Course reference is required"]
-  }
+    ref: "Course"
+  }]
 }, { timestamps: true });
-
 
 module.exports = mongoose.models.Subject || mongoose.model("Subject", SubjectSchema);

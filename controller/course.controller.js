@@ -1,16 +1,17 @@
+// controller/course.controller.js
 const asyncHandler = require('../utils/asyncHandler')
 const AppError = require('../utils/AppError')
 const Course = require('../models/course')
 const mongoose = require('mongoose')
 const Lecture = require('../models/lectures'); 
+const Subject = require('../models/subject');
 
 
-// Create Course
 const createCourse = asyncHandler(async (req, res) => {
   const { name, track, yearId, subject, description, instructor } = req.body
 
   if (!name || !track || !yearId || !subject) {
-    throw appError("name, track, yearId and subject are required", 400)
+    throw new AppError("name, track, yearId and subject are required", 400)
   }
 
   const course = await Course.create({
@@ -30,7 +31,8 @@ const createCourse = asyncHandler(async (req, res) => {
   })
 })
 
-// Get all courses
+
+//  Get all courses 
 const getAllCourses = asyncHandler(async (req, res) => {
   const courses = await Course.find()
     .populate('track')
@@ -44,14 +46,12 @@ const getAllCourses = asyncHandler(async (req, res) => {
   })
 })
 
-// Get course by id
+
+// Get course by id 
 const getCourseById = asyncHandler(async (req, res) => {
   const { id } = req.params
-  const course = await Course.findById(id)
-    .populate('track')
-    .populate('subject')
-    .populate('chapters.lectures')
 
+  const course = await Course.findById(id) 
   if (!course) {
     throw new AppError("Course not found", 404)
   }
@@ -59,11 +59,16 @@ const getCourseById = asyncHandler(async (req, res) => {
   res.status(200).json({
     status: true,
     message: "Course fetched successfully",
-    data: course
+    data: {
+      name: course.name,
+      description: course.description,
+      instructor: course.instructor
+    }
   })
 })
 
-// Update course
+
+// Update course 
 const updateCourse = asyncHandler(async (req, res) => {
   const { id } = req.params
   const { name, description, instructor } = req.body
@@ -85,7 +90,8 @@ const updateCourse = asyncHandler(async (req, res) => {
   })
 })
 
-// Delete course
+
+//  Delete course 
 const deleteCourse = asyncHandler(async (req, res) => {
   const { id } = req.params
   const course = await Course.findByIdAndDelete(id)
@@ -101,7 +107,8 @@ const deleteCourse = asyncHandler(async (req, res) => {
   })
 })
 
-// Add Chapter to Course
+
+//  Add Chapter 
 const addChapter = asyncHandler(async (req, res) => {
   const { courseId } = req.params
   const { title, description } = req.body
@@ -126,7 +133,8 @@ const addChapter = asyncHandler(async (req, res) => {
   })
 })
 
-// Delete Chapter from Course
+
+// Delete Chapter 
 const deleteChapter = asyncHandler(async (req, res) => {
   const { courseId, chapterId } = req.params
 
@@ -146,7 +154,9 @@ const deleteChapter = asyncHandler(async (req, res) => {
     data: course
   })
 })
-// Add Lecture to Chapter
+
+
+//  Add Lecture 
 const addLecture = asyncHandler(async (req, res) => {
   const { courseId, chapterId } = req.params
   const { title, description, videos, material } = req.body
@@ -157,7 +167,7 @@ const addLecture = asyncHandler(async (req, res) => {
 
   const course = await Course.findById(courseId)
   if (!course) {
-    throw appError("Course not found", 404)
+    throw new AppError("Course not found", 404)
   }
 
   const chapter = course.chapters.id(chapterId)
@@ -184,7 +194,8 @@ const addLecture = asyncHandler(async (req, res) => {
   })
 })
 
-// Delete Lecture from Chapter
+
+// Delete Lecture 
 const deleteLecture = asyncHandler(async (req, res) => {
   const { courseId, chapterId, lectureId } = req.params
 
@@ -213,7 +224,9 @@ const deleteLecture = asyncHandler(async (req, res) => {
     data: course
   })
 })
-// Get all chapters for a course
+
+
+//  Get all chapters 
 const getAllChapters = asyncHandler(async (req, res) => {
   const { courseId } = req.params
 
@@ -229,7 +242,8 @@ const getAllChapters = asyncHandler(async (req, res) => {
   })
 })
 
-// Get all lectures for a chapter
+
+//  Get all lectures 
 const getAllLectures = asyncHandler(async (req, res) => {
   const { courseId, chapterId } = req.params
 
@@ -250,16 +264,64 @@ const getAllLectures = asyncHandler(async (req, res) => {
   })
 })
 
+
+
+const addCourseToSubject = asyncHandler(async (req, res) => {
+  const { subjectId, courseId } = req.body;
+
+  if (!subjectId || !courseId) {
+    throw new AppError("subjectId and courseId are required", 400);
+  }
+
+  if (!mongoose.Types.ObjectId.isValid(subjectId) || !mongoose.Types.ObjectId.isValid(courseId)) {
+    throw new AppError("Invalid subjectId or courseId format", 400);
+  }
+
+  const subject = await Subject.findById(subjectId);
+  if (!subject) {
+    throw new AppError("Subject not found", 404);
+  }
+
+  const course = await Course.findById(courseId);
+  if (!course) {
+    throw new AppError("Course not found", 404);
+  }
+
+  if (!subject.courses.map(String).includes(String(courseId))) {
+    subject.courses.push(courseId);
+    await subject.save();
+  }
+
+  
+  if (!course.subject || course.subject.toString() !== subjectId.toString()) {
+    course.subject = subjectId;
+    await course.save();
+  }
+
+  const populatedSubject = await Subject.findById(subjectId).populate('courses', '_id name');
+
+  res.status(200).json({
+    status: true,
+    message: "Course added to Subject successfully",
+    data: {
+      subject: populatedSubject,
+      course
+    }
+  });
+})
+
+
 module.exports = {
-    createCourse,
-    getAllCourses,
-    getCourseById,
-    updateCourse,
-    deleteCourse,
-    addChapter,
-    deleteChapter,
-    addLecture,
-    deleteLecture,
-    getAllChapters,
-    getAllLectures
+  createCourse,
+  getAllCourses,
+  getCourseById,
+  updateCourse,
+  deleteCourse,
+  addChapter,
+  deleteChapter,
+  addLecture,
+  deleteLecture,
+  getAllChapters,
+  getAllLectures,
+  addCourseToSubject
 }

@@ -14,12 +14,13 @@ router.post('/:trackId/:yearId/second-semester/subjects', YearController.addSubj
 router.delete('/:trackId/:yearId/first-semester/subjects/:subjectId', YearController.removeSubjectFromFirstSemester)
 router.delete('/:trackId/:yearId/second-semester/subjects/:subjectId', YearController.removeSubjectFromSecondSemester)
 
+// Get subject by id
+router.get('/subjects/:subjectId', YearController.getSubjectById);
 
 //  Years Management
 router.post('/:trackId/add-year', YearController.addYear)
 router.delete('/:trackId/:yearId', YearController.deleteYear)
 
 //  Get all years of a track
-router.get('/:trackId/years', YearController.getAllYears)
-
+router.get('/subjects/:subjectId', YearController.getSubjectById);
 module.exports = router

@@ -18,5 +18,5 @@ router.post('/:courseId/chapters/:chapterId/lectures', CourseController.addLectu
 router.delete('/:courseId/chapters/:chapterId/lectures/:lectureId', CourseController.deleteLecture)
 router.get('/:courseId/chapters', CourseController.getAllChapters)
 router.get('/:courseId/chapters/:chapterId/lectures', CourseController.getAllLectures)
-
+router.post('/add-course', CourseController.addCourseToSubject)
 module.exports = router
