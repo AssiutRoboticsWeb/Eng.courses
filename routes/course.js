@@ -9,14 +9,16 @@ router.get('/:id', CourseController.getCourseById)
 router.put('/:id', CourseController.updateCourse)      
 router.delete('/:id', CourseController.deleteCourse)   
 
-// ✅ Chapters routes
+//  Chapters routes
 router.post('/:courseId/chapters', CourseController.addChapter)
 router.delete('/:courseId/chapters/:chapterId', CourseController.deleteChapter)
 
-// ✅ Lectures routes
+// Lectures routes
 router.post('/:courseId/chapters/:chapterId/lectures', CourseController.addLecture)
 router.delete('/:courseId/chapters/:chapterId/lectures/:lectureId', CourseController.deleteLecture)
 router.get('/:courseId/chapters', CourseController.getAllChapters)
 router.get('/:courseId/chapters/:chapterId/lectures', CourseController.getAllLectures)
 router.post('/add-course', CourseController.addCourseToSubject)
+router.get('/subject/:subjectId', CourseController.getSubjectById);
+
 module.exports = router

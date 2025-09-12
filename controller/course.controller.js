@@ -309,6 +309,33 @@ const addCourseToSubject = asyncHandler(async (req, res) => {
     }
   });
 })
+//  Get Subject By ID + Courses Names
+const getSubjectById = asyncHandler(async (req, res) => {
+  const { subjectId } = req.params;
+
+  if (!subjectId) {
+    throw new AppError("Subject ID is required", 400);
+  }
+
+  const subject = await Subject.findById(subjectId).populate('courses', '_id name');
+  if (!subject) {
+    throw new AppError("Subject not found", 404);
+  }
+
+  res.status(200).json({
+    status: true,
+    message: "Subject fetched successfully",
+    data: {
+      _id: subject._id,
+      name: subject.name,
+      description: subject.description,
+      courses: subject.courses.map(course => ({
+        id: course._id,
+        name: course.name
+      }))
+    }
+  });
+});
 
 
 module.exports = {
@@ -323,5 +350,6 @@ module.exports = {
   deleteLecture,
   getAllChapters,
   getAllLectures,
-  addCourseToSubject
+  addCourseToSubject,
+  getSubjectById
 }
