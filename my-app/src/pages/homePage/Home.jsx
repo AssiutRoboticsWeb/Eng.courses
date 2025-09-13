@@ -14,14 +14,20 @@ const Home = () => {
   // );
   // fetchedData && console.log("fetchedData =>", fetchedData);
 
-const { data, isLoading: loading, error: fetchError, getData } = useApi(
-   "https://eng-courses-server.vercel.app/api/track"
+  const {
+    data,
+    isLoading: loading,
+    error: fetchError,
+    getData,
+  } = useApi(
+    //  "https://eng-courses-server.vercel.app/api/track"
+    "https://eng-courses-server.vercel.app/api/track"
   );
 
   useEffect(() => {
     getData();
   }, []);
-  
+
   const SectionTitle = [
     {
       title: "Departments",
@@ -32,26 +38,23 @@ const { data, isLoading: loading, error: fetchError, getData } = useApi(
       title: "Featured Courses",
       description: "Latest and best courses available on the platform",
     },
-  ];  
+  ];
 
   return (
     <>
       <HeroSection />
 
-    {loading ? (
-      <p>Loading11...</p>
-    ) : (
-      <DepartmentSelection
-        sectionTitleContent={SectionTitle[0]}
-        fetchedDepartmentsData={data?.data}
-      />
-    )}
+      {loading ? (
+        <p>Loading11...</p>
+      ) : (
+        <DepartmentSelection
+          sectionTitleContent={SectionTitle[0]}
+          fetchedDepartmentsData={data?.data}
+        />
+      )}
       <LastestCoursesSection sectionTitleContent={SectionTitle[1]} />
     </>
   );
 };
-
-
-
 
 export default Home;

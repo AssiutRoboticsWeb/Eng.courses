@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 /* import icons */
 import { MdElectricBolt } from "react-icons/md";
 
-const DepartmentCard = ({ departmentDetails }) => {
+const DepartmentCard = ({ departmentDetails , _id  }) => {
   if (!departmentDetails) {
     return <p>Loading...</p>;
   }
   return (
     <li className="department">
       <Link
-        // to={`/${departmentDetails.name?.trim()}`}
-        to={`/department/${departmentDetails.name?.trim()}`}
+        // to={`/department/${departmentDetails.name?.trim()}`}
+        to={`/department/${departmentDetails.name?.trim()}/${_id}`}
+
         className="flex flex-col items-center justify-center gap-5 p-5
         bg-white rounded-lg hover:scale-105 transition-all
         hover:shadow-lg hover:shadow-gray-400 hover:scale-105 transition-all group relative

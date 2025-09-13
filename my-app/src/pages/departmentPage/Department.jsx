@@ -1,14 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import DepartmentHero from "./DepartmentHero";
 import DepartmentTitle from "./DepartmentTitle";
 // import CourseCard from "../homePage/CourseCard";
+import useApi from "../../fetchApis/useApi";
 import Subjects from "../Subjects";
 const Department = () => {
-  let { deprtName } = useParams();
+  let { deprtName, deprtId } = useParams();
+  console.log("deprtId =>", deprtId);
+
   const departmentName = `${deprtName} Department`;
   const [year, setYear] = useState("");
+  const [yearId, setYearId] = useState("");
   const [semester, setSemester] = useState("");
+
+  console.log(" yearId =>", yearId);
+  console.log(" year =>", year);
+  console.log(" semester =>", semester);
+
+  const { data, isLoading, error, getData } = useApi(
+    // "http://localhost:5001/subjects"
+    `https://eng-courses-server.vercel.app/api/track/${deprtId}`
+  );
+  useEffect(() => {
+    getData();
+  }, []);
 
   const DepartCourses = [
     {
@@ -72,28 +88,25 @@ const Department = () => {
   return (
     <div className="bg-blue-50">
       <DepartmentHero
-        departmentName={departmentName}
+        departmentDetails={data}
         setYear={setYear}
+        setYearId={setYearId}
         setSemester={setSemester}
       />
       {/* ---------------------------------------------------------------------------- */}
-      {year && semester && (
+      {yearId && semester && (
         <DepartmentTitle DepartmentTitle={{ departmentName, year, semester }} />
       )}
       {/* ---------------------------------------------------------------------------- */}
-      <Subjects  deprtName={deprtName} year={year} semester={semester} />
-
-      {/* {year && semester && (
-        <section>
-          <ul
-            className="departments-list  px-4 bg-blue-50  mb-5 p-7 text-center
-            grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {DepartCourses.map((course, index) => {
-              return <CourseCard key={index} CourseDetails={course} />;
-            })}
-          </ul>
-        </section>
-      )} */}
+      {yearId && semester && (
+        <Subjects
+          deprtName={deprtName}
+          deprtId={deprtId}
+          year={year}
+          yearId={yearId}
+          semester={semester}
+        />
+      )}
     </div>
   );
 };

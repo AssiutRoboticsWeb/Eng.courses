@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const SubjectCard = ({ subjectDetails }) => {
+  console.log("subjectDetails =>", subjectDetails);
+
   if (!subjectDetails) {
     return <p>Loading...</p>;
   }
   return (
     <li className="subject">
       <Link
-        to={`/department/${subjectDetails.department?.trim()}/${subjectDetails.id?.trim()}`} 
+        to={`/department/${subjectDetails.name?.trim()}/course/${subjectDetails._id?.trim()}`}
         className="flex flex-col items-center justify-center gap-5 p-1 py-14
         bg-white rounded-lg hover:scale-105 transition-all
         hover:shadow-lg hover:shadow-gray-400 hover:scale-105 transition-all group relative

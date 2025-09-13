@@ -3,7 +3,7 @@ import { IoTimeOutline } from "react-icons/io5";
 import useApi from "../../fetchApis/useApi.jsx";
 import toast, { Toaster } from "react-hot-toast";
 
-const CourseCard = ({ CourseDetails }) => {
+const CourseCard = ({ CourseDetails , deprtName ,courseId }) => {
   // console.log("CourseDetails =>", CourseDetails);
   // console.log("CourseDetails =>", CourseDetails.courses);
 
@@ -34,15 +34,16 @@ const CourseCard = ({ CourseDetails }) => {
       </div>
       <div className="card-body text-left p-5 flex flex-col gap-3">
         <p className=" rounded-full bg-white max-w-max px-2 ">
-          {CourseDetails.departmentName}
+          {/* {CourseDetails.deprtName} */}
         </p>
-        <h3 className="text-md font-bold">{CourseDetails.courseName}</h3>
-        <p className="text-sm">{CourseDetails.instructor}</p>
+        <h3 className="text-md font-bold">{CourseDetails.name}</h3>
+        <h6 className="text-sm">{CourseDetails.description}</h6>
+        <p className="text-sm font-bold">{CourseDetails.instructor}</p>
         <div className="flex items-center gap-1">
           <span>
             <IoTimeOutline />
           </span>
-          <span>{CourseDetails.duration}</span>
+          <span>{CourseDetails?.duration}</span>
           <span>Hours</span>
         </div>
       </div>

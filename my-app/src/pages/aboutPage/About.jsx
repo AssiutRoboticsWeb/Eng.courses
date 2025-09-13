@@ -15,7 +15,7 @@ const About = () => {
         simpler and more efficient.
       </p>
       <h2 className="text-3xl font-bold mb-4 mt-20">Our goals</h2>
-      <ul className="text-left max-w-3xl mx-auto space-y-2">
+      <ul className="text-center max-w-3xl mx-auto space-y-2">
         <li>
           Help every engineering student quickly find the content they need.
         </li>

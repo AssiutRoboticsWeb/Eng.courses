@@ -23,6 +23,38 @@
       "instructor": "Dr. Nancy Parker",
       "duration": "40 minutes",
       "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+    },
+    {
+      "id": "5-1",
+      "departmentName": "Electrical",
+      "courseName": "DC Circuit Analysis",
+      "instructor": "Prof. Alan Thompson",
+      "duration": "45 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+    },
+    {
+      "id": "5-2",
+      "departmentName": "Electrical",
+      "courseName": "Ohm's Law Applications",
+      "instructor": "Dr. Nancy Parker",
+      "duration": "40 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+    },
+    {
+      "id": "5-3",
+      "departmentName": "Electrical",
+      "courseName": "Circuit Components",
+      "instructor": "Prof. George Adams",
+      "duration": "50 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
+    },
+    {
+      "id": "5-1",
+      "departmentName": "Electrical",
+      "courseName": "DC Circuit Analysis",
+      "instructor": "Prof. Alan Thompson",
+      "duration": "45 minutes",
+      "videoUrl": "https://www.youtube.com/embed/OmIjuvEkCJ0"
     }
   ]
 }

@@ -1,16 +1,27 @@
-import { useEffect } from "react";
+import { use, useEffect, useState } from "react";
 import useApi from "../fetchApis/useApi";
 import { Link } from "react-router-dom";
 
 import SubjectCard from "./SubjectCard";
-const Subjects = ({deprtName , year , semester}) => {
-  const { data, isLoading, error, getData, } = useApi(
-    "http://localhost:5001/subjects"
+const Subjects = ({ deprtName, deprtId, year , yearId, semester }) => {
+  const { data, isLoading, error, getData } = useApi(
+    // "http://localhost:5001/subjects"
+    `https://eng-courses-server.vercel.app/api/track/${deprtId}`
   );
   useEffect(() => {
     getData();
+    console.log("******* getData called *******");
   }, []);
-  data && console.log("Subjects data:", data);
+
+const yearCourses = 
+  data && data.data.years.find((y) => y._id == yearId);
+
+  const subjects =
+    semester == 1
+      ? yearCourses?.firstSemester?.subjects || []
+      : yearCourses?.secondSemester?.subjects || [];
+
+      
   return (
     <section className="subject-page">
       <h2 className="text-3xl font-bold text-center my-5">
@@ -20,12 +31,11 @@ const Subjects = ({deprtName , year , semester}) => {
         className="departments-list  px-4 bg-blue-50  mb-5 p-7 text-center
               grid  grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
         {isLoading && <p>Loading...</p>}
-        {data && data.map((subject, index) => (
-          (subject.department).toLowerCase() == deprtName.toLowerCase() && 
-          (subject.year).toString() == year.toString() &&
-          (subject.semester).toString() == semester.toString() &&
-          <SubjectCard key={index} subjectDetails={subject}  />
+
+         {subjects.map((subject, index) => (
+          <SubjectCard key={index} subjectDetails={subject} />
         ))}
+
       </ul>
     </section>
   );

@@ -61,9 +61,11 @@ const Header = () => {
       className="conatiner fixed z-50 top-0 w-full  px-4 py-2 bg-white shadow-lg h-16 capitalize flex items-center font-bold justify-between 
     ">
       {/* ---------------------------------- logo ----------------------------------  */}
-      <figure className="logo w-1/2 md:w-1/4 min-w-max">
-        <h2 className="text-2xl font-bold ">eng-learning</h2>
-      </figure>
+      <Link to="/">
+        <figure className="logo w-1/2 md:w-1/4 min-w-max">
+          <h2 className="text-2xl font-bold ">eng-learning</h2>
+        </figure>
+      </Link>
       <aside
         className={`header-menu  bg-blue-50 absolute top-full w-full left-0 text-center rounded-b-lg
           md:flex md:justify-between md:items-center md:relative md:left-0 md:top-0    pb-4 md:pb-0 
@@ -126,7 +128,7 @@ const Header = () => {
         <CgProfile size={40} className="block md:hidden" />
         <CiMenuBurger
           size={40}
-          className="block md:hidden"
+          className="block md:hidden hover:cursor-pointer"
           onClick={() => {
             setIsHeaderMenuOpen(!isHeaderMenuOpen);
           }}

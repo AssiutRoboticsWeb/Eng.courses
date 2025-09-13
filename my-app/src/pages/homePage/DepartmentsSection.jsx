@@ -70,7 +70,7 @@ const DepartmentsSection = ({
           className="departments-list  px-4 bg-blue-50  mb-5 p-7 text-center
               grid  grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
           {fetchedDepartmentsData.map((dept, index) => (
-            <DepartmentCard key={index} departmentDetails={dept} />
+            <DepartmentCard key={dept._id} departmentDetails={dept} _id={dept._id} />
           ))}
         </ul>
       ) : (

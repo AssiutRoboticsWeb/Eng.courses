@@ -20,11 +20,11 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/department/:deprtName",
-        element: <Department />,
+        path: "/department/:deprtName/:deprtId",
+        element: <Department />
       },
       {
-        path: "/department/:deprtName/:courseId",
+        path: "/department/:deprtName/course/:courseId",
         element: <CoursesPage />,
       },
       {
